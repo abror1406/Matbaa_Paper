@@ -1,0 +1,236 @@
+.banner {
+    width: 100%;
+    height: 700px;
+    padding: 160px 0;
+    background: linear-gradient(135deg, #01b16d 38.83%, #41c491 100%);
+
+    &-row {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-content {
+        width: 60%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0 80px;
+        &__top {
+            width: 100%;
+            height: 70%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        &__title {
+            font-family: $font-family;
+            font-weight: 600;
+            font-size: 61px;
+            color: $white-color;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            cursor: pointer;
+        }
+
+        &__subtitle {
+            font-family: $font-family;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 150%;
+            color: $banner-subtitle__color;
+            cursor: pointer;
+        }
+
+        &__button {
+            border-radius: 8px;
+            padding: 16px 24px;
+            width: 200px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: $white-color;
+            font-family: $font-family;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            color: $banner-btn-text__color;
+            margin: 36px 0;
+            @include trn();
+
+            &:hover {
+                background-color: #ffffffdc;
+            }
+        }
+
+        &__bottom {
+            width: 100%;
+            height: 30%;
+            display: flex;
+            align-items: center;
+            border-top: 0.70px solid #f9f9fb;
+            padding: 36px 0;
+
+            &_works {
+                border-radius: 4px;
+                padding: 12px 24px;
+                background: rgba(0, 0, 0, 0.08);
+                width: 800px;
+                height: 44px;
+                display: flex;
+                align-items: center;
+                column-gap: 12px;
+                overflow: hidden;
+            }
+
+            &_work {
+                font-family: $font-family;
+                font-weight: 400;
+                font-size: 14px;
+                color: $white-color;
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &-video {
+        width: 40%;
+        height: 700px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-image: url(../../images/banner-bg__image.png);
+        background-size: cover;
+        background-position: center;
+
+        &__play {
+            width: 80px;
+            height: 80px;
+            border-radius: 100%;
+            background: rgba(255, 255, 255, 0.2);
+
+            svg {
+                width: 22px;
+                height: 26px;
+                stroke-width: 2px;
+                stroke: #fff;
+            }
+        }
+    }
+}
+
+// MEDIA - QUERIES - START
+
+@include media(1070) {
+    .banner {
+        padding: 120px 0;
+
+        &-content {
+            &__title {
+                font-size: 50px;
+            }
+
+            &__subtitle {
+                font-size: 15px;
+            }
+
+            &__button {
+                padding: 12px 20px;
+                width: 130px;
+                height: 50px;
+                font-size: 14px;
+            }
+
+            &__bottom {
+                &_works {
+                    padding: 10px 22px;
+                    column-gap: 8px;
+                }
+
+                &_work {
+                    font-size: 10px;
+                }
+            }
+        }
+
+        &-video {
+            &__play {
+                width: 50px;
+                height: 50px;
+
+                svg {
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+        }
+    }
+}
+
+@include media(820) {
+    .banner {
+        &-content {
+            &__title {
+                font-size: 40px;
+            }
+
+            &__subtitle {
+                font-size: 12px;
+            }
+
+            &__button {
+                padding: 8px 16px;
+                width: 100px;
+                height: 40px;
+                font-size: 12px;
+            }
+
+            &__bottom {
+                &_works {
+                    padding: 8px 20px;
+                    column-gap: 6px;
+                }
+
+                &_work {
+                    font-size: 7px;
+                }
+            }
+        }
+    }
+}
+
+@include media(768) {
+    .banner {
+        width: 100%;
+        height: 930px;
+        padding: 80px 0;
+
+        &-row {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        &-content {
+            width: 100%;
+            height: 600px;
+        }
+
+        &-video {
+            width: 100%;
+            position: relative;
+            top: -80px;
+        }
+    }
+}
+
+// MEDIA - QUERIES - END
